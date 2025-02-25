@@ -1,15 +1,25 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Search from './components/search.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const[SearchTerm, setSearchTerm] = useState('');
 
   return (
-      <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+    <main>
+      <div className="pattern"/>
+      
+      <div className="wrapper">
+        <header>
+          <img src="./hero-img.png" alt="hero poster" />
+        <h1 class="text-3xl font-bold underline">
+            Find <span className='text-gradient'>Movies</span> you'll Enjoy Without the Hassle
+        </h1>
+        </header>
+
+        <Search SearchTerm={SearchTerm} setSearchTerm={setSearchTerm}/>
+  </div>
+  </main>
   )
 }
 
